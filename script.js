@@ -34,6 +34,7 @@ if (!_token) {
 }
 
 // Make a call using the token
+// First Call ""
 $.ajax({
    url: "https://api.spotify.com/v1/me/top/artists",
    type: "GET",
@@ -46,22 +47,27 @@ $.ajax({
      });
    }
 });
+
+// Second Call
 
 console.log("Next")
 $.ajax({
-   url: "https://api.spotify.com/v1/me/top/artists",
+   url: "https://api.spotify.com/v1/me/player/recently-played",
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
+   console.log("Recently played Tracks");
      // Do something with the returned data
-     data.items.map(function(artist) {
-		 console.log("Done")
-       let item = $('<li>' + artist.name + '</li>');
-       item.appendTo($('#top-artists'));
-     });
+     console.log(data);
    }
 });
 
+// API Call Directory
 
 
+
+
+
+/*
+*/
 
