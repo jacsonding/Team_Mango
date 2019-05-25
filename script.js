@@ -37,7 +37,9 @@ const scopes = [
 'user-read-birthdate',
 'user-read-private'
 ];
+// Users Recently Played Songs
 var usrTracks = [];
+// USers Top Artists
 var usrArtists = [];
 
 var base = 'https://api.spotify.com/v1/recommendations?';
@@ -48,9 +50,6 @@ var base = 'https://api.spotify.com/v1/recommendations?';
 	var reccURL = base+market+seed_artists+seed_tracks+min_energy;
 // Get Suggestions from Users Tracks
 	console.log(" BEFORE Getting custom with parameters " + reccURL);
-	
-	
-
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
   window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
@@ -143,7 +142,7 @@ $.ajax({
 // Users Recetly Played Songs
 
 
-
+console.log("update");
 
 /*
 */
