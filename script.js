@@ -23,7 +23,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '2102d6bf57714410a8f50dd1ccadc571';
-const redirectUri = 'https://spotify-implicit-grant.glitch.me';
+const redirectUri = "http://jacsonding.github.io/Team_Mango";
 const scopes = [
   'user-top-read'
 ];
@@ -46,3 +46,22 @@ $.ajax({
      });
    }
 });
+
+console.log("Next")
+$.ajax({
+   url: "https://api.spotify.com/v1/me/top/artists",
+   type: "GET",
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
+   success: function(data) { 
+     // Do something with the returned data
+     data.items.map(function(artist) {
+		 console.log("Done")
+       let item = $('<li>' + artist.name + '</li>');
+       item.appendTo($('#top-artists'));
+     });
+   }
+});
+
+
+
+
