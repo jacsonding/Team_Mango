@@ -71,8 +71,8 @@ $.ajax({
 // Get Suggestions from Users Tracks
 $.ajax({
 	
-	var base = "https://api.spotify.com/v1/recommendations?
-	var market = "market=US"
+	var base = 'https://api.spotify.com/v1/recommendations?'
+	var market = 'market=US'
 	var seed_artists= '&seed_artists=4NHQUGzhtTLFvgF5SZesLK'
 	var seed_tracks = '&seed_tracks=0c6xIDDpzE81m2q797ordA&'
 	var min_energy= '&min_energy = 0.4'
