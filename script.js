@@ -93,7 +93,7 @@ console.log("Suggestions");
 
 
 function getCustomPL(){
-	console.log("Getting custom");
+	console.log("Getting custom with parameters " + base+market+seed_artists+seed_tracks+min_energy);
 	$.ajax({
    url: base+market+seed_artists+seed_tracks+min_energy,
    type: "GET",
