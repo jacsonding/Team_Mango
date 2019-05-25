@@ -88,8 +88,8 @@ $.ajax({
      data.items.map(function(artist) {
 		 //console.log(artist);
 		 usrArtists.push(artist);
-       let item = $('<li>' + artist.name + '</li>');
-       item.appendTo($('#top-artists'));
+       //let item = $('<li>' + artist.name + '</li>');
+      // item.appendTo($('#top-artists'));
      });
    }
 });
