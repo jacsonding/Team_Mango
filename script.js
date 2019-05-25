@@ -122,12 +122,12 @@ $.ajax({
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
      // Do something with the returned data
-     data.items.map(function(artist) {
+     /*data.items.map(function(artist) {
 		 //console.log(artist);
 		 usrArtists.push(artist);
        let item = $('<li>' + artist.name + '</li>');
        item.appendTo($('#top-artists'));
-     });
+     }); */
    }
 });
 }
