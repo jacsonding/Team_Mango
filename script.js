@@ -116,11 +116,13 @@ function getCustomPL(){
    
    
 }); */
+console.log("update");
 $.ajax({
-   url: "https://api.spotify.com/v1/me/top/artists",
+   url: url, 
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
+   console.log(data);
      // Do something with the returned data
      /*data.items.map(function(artist) {
 		 //console.log(artist);
