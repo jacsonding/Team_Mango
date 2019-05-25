@@ -66,7 +66,8 @@ $.ajax({
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
-   console.log("Recently played Tracks");
+  // console.log("Recently played Tracks");
+  // console.log("Recently played Tracks");
      // Do something with the returned data
 	 usrTracks.push(data);
     // console.log(data);
