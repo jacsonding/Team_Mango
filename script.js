@@ -106,7 +106,7 @@ function getCustomPL(){
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
    for(var i=0;i<data.items.length;i++){
-	   console.log("Attempting"  + data.items[i].track.name + " " + data.items[i].track.artist[0].name;
+	   console.log("Attempting "  + reccURL);
    let suggTrack = $('<li>' + data.items[i].track.name + " " + data.items[i].track.artist[0].name +  + '</li>');
           suggTrack.appendTo($('#top-artists'));
 
