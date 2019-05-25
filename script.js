@@ -75,11 +75,14 @@ $.ajax({
      // Do something with the returned data
      data.items.map(function(artist) {
 		 console.log(artist);
+		 usrArtists.push(artist);
        let item = $('<li>' + artist.name + '</li>');
        item.appendTo($('#top-artists'));
      });
    }
 });
+
+
 	var base = 'https://api.spotify.com/v1/recommendations?';
 	var market = 'market=US';
 	var seed_artists= '&seed_artists=4NHQUGzhtTLFvgF5SZesLK';
@@ -98,6 +101,9 @@ $.ajax({
    }
 });
 
+function getCustomPL(){
+	console.log("Getting custom");
+}
 // API Call Directory
 
 // Users Recetly Played Songs
