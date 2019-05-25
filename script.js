@@ -51,6 +51,7 @@ $.ajax({
 // Second Call
 
 console.log("Next")
+console.log("Next2");
 $.ajax({
    url: "https://api.spotify.com/v1/me/player/recently-played",
    type: "GET",
