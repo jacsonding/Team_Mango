@@ -25,7 +25,8 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = 'f2d3a3f8949d4c54905c23e1c967dd7c';
 const redirectUri = "http://jacsonding.github.io/Team_Mango";
 const scopes = [
-  'user-top-read'
+  'user-top-read',
+  'user-read-recently-played'
 ];
 
 // If there is no token, redirect to Spotify authorization
