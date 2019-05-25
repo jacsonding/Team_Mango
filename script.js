@@ -1,4 +1,3 @@
-alert("Got script");
 
 
 // Get the hash of the url
