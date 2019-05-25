@@ -22,7 +22,7 @@ let _token = hash.access_token;
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
-const clientId = '2102d6bf57714410a8f50dd1ccadc571';
+const clientId = 'f2d3a3f8949d4c54905c23e1c967dd7c';
 const redirectUri = "http://jacsonding.github.io/Team_Mango";
 const scopes = [
   'user-top-read'
