@@ -74,7 +74,7 @@ $.ajax({
    success: function(data) { 
      // Do something with the returned data
      data.items.map(function(artist) {
-		 console.log(artist);
+		 //console.log(artist);
 		 usrArtists.push(artist);
        let item = $('<li>' + artist.name + '</li>');
        item.appendTo($('#top-artists'));
@@ -90,19 +90,20 @@ $.ajax({
 	var min_energy= '&min_energy = 0.4';
 console.log("Suggestions");
 // Get Suggestions from Users Tracks
-$.ajax({
+
+
+function getCustomPL(){
+	console.log("Getting custom");
+	$.ajax({
    url: base+market+seed_artists+seed_tracks+min_energy,
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
-   //console.log(data);
+   console.log(data);
      // Do something with the returned data
    
    }
 });
-
-function getCustomPL(){
-	console.log("Getting custom");
 }
 // API Call Directory
 
