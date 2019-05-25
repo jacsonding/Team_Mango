@@ -1,4 +1,4 @@
-'
+
 
 // Get the hash of the url
 
