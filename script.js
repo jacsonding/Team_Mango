@@ -88,13 +88,28 @@ $.ajax({
 	var seed_artists= '&seed_artists=4NHQUGzhtTLFvgF5SZesLK';
 	var seed_tracks = '&seed_tracks=0c6xIDDpzE81m2q797ordA&';
 	var min_energy= '&min_energy = 0.4';
-console.log("Suggestions");
+	var reccURL = base+market+seed_artists+seed_tracks+min_energy;
 // Get Suggestions from Users Tracks
 
 
 function getCustomPL(){
-	console.log("Getting custom with parameters " + base+market+seed_artists+seed_tracks+min_energy);
-	
+	console.log("Getting custom with parameters " + reccURL);
+	$.ajax({
+   url: reccURL,
+   type: "GET",
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
+   success: function(data) { 
+   for(var i=0;i<data.items.length;i++){
+	   console.log("Attempting"  + data.items[i].track.name + " " + data.items[i].track.artist[0].name;
+   let suggTrack = $('<li>' + data.items[i].track.name + " " + data.items[i].track.artist[0].name +  + '</li>');
+          suggTrack.appendTo($('#top-artists'));
+
+   }
+  // console.log(data);
+     // Do something with the returned data
+   
+   }
+});
 }
 // API Call Directory
 
