@@ -35,23 +35,8 @@ if (!_token) {
 }
 
 // Make a call using the token
-// First Call ""
-$.ajax({
-   url: "https://api.spotify.com/v1/me/top/artists",
-   type: "GET",
-   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
-   success: function(data) { 
-     // Do something with the returned data
-     data.items.map(function(artist) {
-       let item = $('<li>' + artist.name + '</li>');
-       item.appendTo($('#top-artists'));
-     });
-   }
-});
 
-// Second Call
-
-console.log("Next")
+// First  Call: Get Users Recently Played Songs (Graph It)
 console.log("Next2");
 $.ajax({
    url: "https://api.spotify.com/v1/me/player/recently-played",
@@ -64,8 +49,48 @@ $.ajax({
    }
 });
 
+
+
+// Second Call: Give Recommendations 
+// Get Users Top Artists
+$.ajax({
+   url: "https://api.spotify.com/v1/me/top/artists",
+   type: "GET",
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
+   success: function(data) { 
+     // Do something with the returned data
+     data.items.map(function(artist) {
+		 console.log(artist);
+       let item = $('<li>' + artist.name + '</li>');
+       item.appendTo($('#top-artists'));
+     });
+   }
+});
+
+
+// Get Suggestions from Users Tracks
+$.ajax({
+	
+	var base = "https://api.spotify.com/v1/recommendations?
+	var market = "market=US"
+	var seed_artists= '&seed_artists=4NHQUGzhtTLFvgF5SZesLK'
+	var seed_tracks = '&seed_tracks=0c6xIDDpzE81m2q797ordA&'
+	var min_energy= '&min_energy = 0.4'
+   url: base+market+seed_artists+seed_tracks+min_energy,
+   type: "GET",
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
+   success: function(data) { 
+     // Do something with the returned data
+     data.items.map(function(artist) {
+       let item = $('<li>' + artist.name + '</li>');
+       item.appendTo($('#top-artists'));
+     });
+   }
+});
+
 // API Call Directory
 
+// Users Recetly Played Songs
 
 
 
