@@ -124,7 +124,7 @@ $.ajax({
    success: function(data) { 
    console.log(data);
    for(var i=0;i<data.tracks.length;i++){
-	    let item = $('<li>' + tracks[i].name  + '</li>');
+	    let item = $('<li>' + data.tracks[i].name  + '</li>');
        item.appendTo($('#top-artists'));
    }
    
