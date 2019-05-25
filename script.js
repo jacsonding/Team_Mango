@@ -90,10 +90,11 @@ $.ajax({
 	var min_energy= '&min_energy = 0.4';
 	var reccURL = base+market+seed_artists+seed_tracks+min_energy;
 // Get Suggestions from Users Tracks
+	console.log(" BEFORE Getting custom with parameters " + reccURL);
 
 
 function getCustomPL(){
-	console.log("Getting custom with parameters " + reccURL);
+	console.log("AFTER Getting custom with parameters " + reccURL);
 	$.ajax({
    url: reccURL,
    type: "GET",
