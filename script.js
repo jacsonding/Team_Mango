@@ -118,7 +118,7 @@ function getCustomPL(){
 }); */
 console.log("update");
 $.ajax({
-   url: url, 
+   url: reccURL, 
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
