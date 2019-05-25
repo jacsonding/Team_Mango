@@ -100,7 +100,7 @@ $.ajax({
 
 function getCustomPL(){
 	console.log("AFTER Getting custom with parameters " + reccURL);
-	$.ajax({
+	/*$.ajax({
    url: reccURL,
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
@@ -115,6 +115,20 @@ function getCustomPL(){
      // Do something with the returned data
    
    
+}); */
+$.ajax({
+   url: "https://api.spotify.com/v1/me/top/artists",
+   type: "GET",
+   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
+   success: function(data) { 
+     // Do something with the returned data
+     data.items.map(function(artist) {
+		 //console.log(artist);
+		 usrArtists.push(artist);
+       let item = $('<li>' + artist.name + '</li>');
+       item.appendTo($('#top-artists'));
+     });
+   }
 });
 }
 // API Call Directory
