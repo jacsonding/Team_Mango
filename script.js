@@ -1,4 +1,4 @@
-
+'
 
 // Get the hash of the url
 
@@ -26,7 +26,16 @@ const clientId = 'f2d3a3f8949d4c54905c23e1c967dd7c';
 const redirectUri = "http://jacsonding.github.io/Team_Mango";
 const scopes = [
   'user-top-read',
-  'user-read-recently-played'
+  'user-read-recently-played',
+  'user-library-modify',
+	'user-library-read',
+	'playlist-read-private',
+'playlist-modify-public',
+'playlist-modify-private',
+'playlist-read-collaborative',
+'user-read-email',
+'user-read-birthdate',
+'user-read-private'
 ];
 
 // If there is no token, redirect to Spotify authorization
