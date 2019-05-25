@@ -105,8 +105,7 @@ function getCustomPL(){
    type: "GET",
    beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
    success: function(data) { 
-   console.log(data);
-   }
+  console.log(data);
   // console.log(data);
      // Do something with the returned data
    
