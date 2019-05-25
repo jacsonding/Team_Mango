@@ -94,22 +94,7 @@ console.log("Suggestions");
 
 function getCustomPL(){
 	console.log("Getting custom with parameters " + base+market+seed_artists+seed_tracks+min_energy);
-	$.ajax({
-   url: base+market+seed_artists+seed_tracks+min_energy,
-   type: "GET",
-   beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
-   success: function(data) { 
-   for(var i=0;i<data.items.length;i++){
-	   console.log("Attempting"  + data.items[i].track.name + " " + data.items[i].track.artist[0].name;
-   let suggTrack = $('<li>' + data.items[i].track.name + " " + data.items[i].track.artist[0].name +  + '</li>');
-          suggTrack.appendTo($('#top-artists'));
-
-   }
-  // console.log(data);
-     // Do something with the returned data
-   
-   }
-});
+	
 }
 // API Call Directory
 
