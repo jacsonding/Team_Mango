@@ -58,7 +58,7 @@ $.ajax({
    console.log("Recently played Tracks");
      // Do something with the returned data
 	 usrTracks.push(data);
-     console.log(data);
+    // console.log(data);
    }
 });
 
