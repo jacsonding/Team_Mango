@@ -63,7 +63,7 @@ $.ajax({
         xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
     },
     success: function(data) {
-        usrTracks = data;
+        usrTracks = data.items;
     }
 });
 
@@ -99,6 +99,7 @@ function getCustomPL() {
         },
         success: function(data) {
             console.log(data);
+			// Offer Playlist Reccs from Reccomendation Array
             for (var i = 0; i < data.tracks.length; i++) {
                 let item = $('<li>' + data.tracks[i].name + " " + data.tracks[i].artists[0].name + '</li>');
                 item.appendTo($('#top-artists'));
@@ -107,8 +108,8 @@ function getCustomPL() {
         }
     });
 	console.log(usrTracks);
-
 }
+
 
 
 
