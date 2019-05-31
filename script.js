@@ -63,7 +63,7 @@ $.ajax({
         xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
     },
     success: function(data) {
-        usrTracks.push(data);
+        usrTracks.push(data[0].items);
     }
 });
 
