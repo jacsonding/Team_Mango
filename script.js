@@ -106,6 +106,8 @@ function getCustomPL() {
 
         }
     });
+	console.log(usrTracks);
+
 }
 
 
