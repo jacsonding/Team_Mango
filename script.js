@@ -40,7 +40,7 @@ if (!_token) {
 }
 
 // Users Recently Played Songs
-var usrTracks = [];
+var usrTracks = []; // how to access valence: usrTracks[0]
 // USers Top Artists
 var usrArtists = [];
 
@@ -63,7 +63,7 @@ $.ajax({
         xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
     },
     success: function(data) {
-        usrTracks.push(data);
+        usrTracks.push(data[0]);
     }
 });
 
