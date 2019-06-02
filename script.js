@@ -41,6 +41,7 @@ if (!_token) {
 
 // Users Recently Played Songs
 var usrTracks = []; // how to access valence: usrTracks[0]
+var valenceArr =[];
 // USers Top Artists
 var usrArtists = [];
 
@@ -54,7 +55,6 @@ var reccURL = base + market + seed_artists + seed_tracks + min_energy;
 
 
 /* API CALLS */
-// First Step:
 // API Call Get Users Recently Played Songs (Graph It)
 $.ajax({
     url: "https://api.spotify.com/v1/me/player/recently-played",
@@ -63,7 +63,13 @@ $.ajax({
         xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
     },
     success: function(data) {
-        usrTracks = data.items;
+        usrTracks = data.items; // set Recent Track Array
+		// Get Valence of those Recent Track Array
+		for(var i=0;i<data.items.length;i++){
+			console.log(data.items[i].track.id);
+			valenceArr.push(data.items[i].track.id);
+		}
+		// THEN
     }
 });
 
@@ -111,7 +117,8 @@ function getCustomPL() {
 }
 
 
-
+// How to get valence of songs
+// for i in rage usrTracks[i].track
 
 console.log("update");
 
