@@ -69,14 +69,30 @@ $.ajax({
 			console.log(data.items[i].track.id);
 			valenceArr.push(data.items[i].track.id);
 		}
-		// THEN
+
+		// Get Valences
+		var getValenceURL = "https://api.spotify.com/v1/audio-features?ids=" + valenceArr.toString();
+		
+		 $.ajax({
+        url: getValenceURL,
+        type: "GET",
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
+        },
+        success: function(data) {
+            console.log(data);
+			// Offer Playlist Reccs from Reccomendation Array
+            
+
+        }
+    });
     }
 });
 
 
 
 //Second Step:
-// Get Users Top Artists
+// Get Users Top Artists for playlist suggestion
 $.ajax({
     url: "https://api.spotify.com/v1/me/top/artists",
     type: "GET",
@@ -93,8 +109,7 @@ $.ajax({
 
 
 
-// Third Step:
-// Custom Playlist Recommendation
+// Custom Playlist Suggestion
 function getCustomPL() {
     console.log("AFTER Getting custom with parameters " + reccURL);
     $.ajax({
