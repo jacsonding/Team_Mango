@@ -80,7 +80,7 @@ $.ajax({
             xhr.setRequestHeader('Authorization', 'Bearer ' + _token);
         },
         success: function(data) {
-            console.log(data);
+            console.log(valeneArr = data.audio_features);
 			// Offer Playlist Reccs from Reccomendation Array
             
 
