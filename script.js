@@ -131,7 +131,7 @@ function getCustomPL() {
 	console.log(usrTracks);
 }
 
-function graphData(){
+function graphData() {
     //http://bl.ocks.org/jfreels/6816504
     var body = d3.select('D3JS')
 
@@ -188,8 +188,8 @@ function graphData(){
          .attr('stroke-width',1)
      })
    .append('title') // Tooltip
-     .text(function (d) { return d.valence + })
-                          // '\nValence: ' + formatPercent(d.aror) +
+     .text(function (d) { return d.valence })
+                          //+ '\nValence: ' + formatPercent(d.aror) +
                           // '\nStd. Dev.: ' + formatPercent(d.asd) })
      // X-axis
      svg.append('g')
