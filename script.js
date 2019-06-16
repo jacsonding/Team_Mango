@@ -132,8 +132,9 @@ function getCustomPL() {
 }
 
 function graphData() {
+    var data = valenceArr
     //http://bl.ocks.org/jfreels/6816504
-    var body = d3.select('D3JS')
+    var body = d3.select('#D3JS')
 
     var margin = { top: 50, right: 50, bottom: 50, left: 50 }
     var h = 500 - margin.top - margin.bottom
