@@ -72,7 +72,7 @@ $.ajax({
 
 		// Get Valences
 		var getValenceURL = "https://api.spotify.com/v1/audio-features?ids=" + valenceArr.toString();
-		
+
 		 $.ajax({
         url: getValenceURL,
         type: "GET",
@@ -82,7 +82,7 @@ $.ajax({
         success: function(data) {
             console.log(valenceArr = data.audio_features);
 			// Offer Playlist Reccs from Reccomendation Array
-            
+
 
         }
     });
@@ -129,6 +129,92 @@ function getCustomPL() {
         }
     });
 	console.log(usrTracks);
+}
+
+function graphData(){
+    //http://bl.ocks.org/jfreels/6816504
+    var body = d3.select('D3JS')
+
+    var margin = { top: 50, right: 50, bottom: 50, left: 50 }
+    var h = 500 - margin.top - margin.bottom
+    var w = 500 - margin.left - margin.right
+    var formatPercent = d3.format('.2%')
+
+    var colorScale = d3.scale.category20()
+    var xScale = d3.scale.linear().domain([0,1]).range([0,w])
+    var yScale = d3.scale.linear().domain([0,1]).range([h,0])
+
+    // SVG
+    var svg = body.append('svg')
+        .attr('height',h + margin.top + margin.bottom)
+        .attr('width',w + margin.left + margin.right)
+      .append('g')
+        .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
+    // X-axis
+    var xAxis = d3.svg.axis()
+      .scale(xScale)
+      .tickFormat(formatPercent)
+      .ticks(5)
+      .orient('bottom')
+    // Y-axis
+    var yAxis = d3.svg.axis()
+      .scale(yScale)
+      .tickFormat(formatPercent)
+      .ticks(5)
+      .orient('left')
+
+      var circles = svg.selectAll('circle')
+     .data(data)
+     .enter()
+   .append('circle')
+     .attr('cx',function (d) { return xScale(d.valence) })
+     .attr('cy',function (d) { return yScale(d.energy) })
+     .attr('r','10')
+     .attr('stroke','black')
+     .attr('stroke-width',1)
+     .attr('fill',function (d,i) { return colorScale(i) })
+     .on('mouseover', function () {
+       d3.select(this)
+         .transition()
+         .duration(500)
+         .attr('r',20)
+         .attr('stroke-width',3)
+     })
+     .on('mouseout', function () {
+       d3.select(this)
+         .transition()
+         .duration(500)
+         .attr('r',10)
+         .attr('stroke-width',1)
+     })
+   .append('title') // Tooltip
+     .text(function (d) { return d.valence + })
+                          // '\nValence: ' + formatPercent(d.aror) +
+                          // '\nStd. Dev.: ' + formatPercent(d.asd) })
+     // X-axis
+     svg.append('g')
+         .attr('class','axis')
+         .attr('transform', 'translate(0,' + h + ')')
+         .call(xAxis)
+       .append('text') // X-axis Label
+         .attr('class','label')
+         .attr('y',-10)
+         .attr('x',w)
+         .attr('dy','.71em')
+         .style('text-anchor','end')
+         .text('Valence')
+     // Y-axis
+     svg.append('g')
+         .attr('class', 'axis')
+         .call(yAxis)
+       .append('text') // y-axis Label
+         .attr('class','label')
+         .attr('transform','rotate(-90)')
+         .attr('x',0)
+         .attr('y',5)
+         .attr('dy','.71em')
+         .style('text-anchor','end')
+         .text('Energy')
 }
 
 
