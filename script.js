@@ -218,6 +218,16 @@ function graphData() {
          .text('Energy')
 }
 
+function fbAnalyze(){
+	FB.api(
+  '/me',
+  'GET',
+  {"fields":"id,name,posts"},
+  function(response) {
+console.log(response)
+  }
+);
+}
 
 // How to get valence of songs
 // for i in rage usrTracks[i].track
