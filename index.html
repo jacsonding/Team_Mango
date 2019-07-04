@@ -12,8 +12,20 @@
       crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    
   </head>
   <body class="container">
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '2363631587031491',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <h1 class="text-salmon">Spotify App</h1>
     <h3>This app uses the implicit grant authorization flow to authenticate users and get user data.</h3>
