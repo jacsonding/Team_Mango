@@ -218,7 +218,7 @@ function graphData() {
          .text('Energy')
 }
 
-function fbAnalyze(){
+function analyzeFB(){
 	FB.api(
   '/me',
   'GET',
