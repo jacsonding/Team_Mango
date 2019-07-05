@@ -224,6 +224,8 @@ FB.login(function(response) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
+	console.log('User Posts');
+	     console.log(response.posts);
      });
     } else {
      console.log('User cancelled login or did not fully authorize.');
