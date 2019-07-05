@@ -222,7 +222,7 @@ function analyzeFB(){
 FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
-     FB.api('/me', function(response) {
+     FB.api('/me', 'GET', {"fields:"id,name,posts"},function(response) {
        console.log('Good to see you, ' + response.name + '.');
 	console.log('User Posts');
 	     console.log(response);
