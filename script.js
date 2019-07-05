@@ -228,7 +228,10 @@ FB.login(function(response) {
     } else {
      console.log('User cancelled login or did not fully authorize.');
     }
-});
+}, {scope: 'email,user_posts',
+    return_scopes:true
+   });
+   
 }
 
 // How to get valence of songs
