@@ -226,6 +226,7 @@ FB.login(function(response) {
        console.log('Good to see you, ' + response.name + '.');
 	console.log('User Posts');
 	     console.log(response);
+	     console.log('End User Posts');
      });
     } else {
      console.log('User cancelled login or did not fully authorize.');
