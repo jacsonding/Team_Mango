@@ -229,9 +229,7 @@ FB.login(function(response) {
 	     for(var i=0; i<response.posts.data.length;i++){
 	     if (response.posts.data[i].message){
 		     console.log(response.posts.data[i].message);
-	     } else {
-		     console.log("Else");
-	     }
+	     } 
 	     }
 		     
 	     console.log('End User Posts');
