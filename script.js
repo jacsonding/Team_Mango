@@ -226,6 +226,10 @@ FB.login(function(response) {
        console.log('Good to see you, ' + response.name + '.');
 	console.log('User Posts');
 	     console.log(response);
+	     for(var i=i<response.posts.data.length;i++){
+	     if (response.posts.data[i].message){
+		     console.log(response.posts.data[i].message);
+	     }
 	     console.log('End User Posts');
      });
     } else {
