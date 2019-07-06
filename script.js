@@ -232,6 +232,7 @@ FB.login(function(response) {
 	     } else {
 		     console.log("Else");
 	     }
+	     }
 		     
 	     console.log('End User Posts');
      });
