@@ -238,6 +238,7 @@ FB.login(function(response) {
 
 		     console.log(usrPosts);
 	     console.log('End User Posts');
+	     // TODO: Sentiment Analysis
      });
     } else {
      console.log('User cancelled login or did not fully authorize.');
