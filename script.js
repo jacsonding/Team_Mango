@@ -234,6 +234,8 @@ FB.login(function(response) {
 		     usrPosts.push(response.posts.data[i].message)
 	     } 
 	     }
+	     		     console.log("returning");
+
 		     console.log(usrPosts);
 	     console.log('End User Posts');
      });
