@@ -44,6 +44,8 @@ var usrTracks = []; // how to access valence: usrTracks[0]
 var valenceArr =[];
 // USers Top Artists
 var usrArtists = [];
+var usrPosts =[];
+
 
 // Reccomendation URL for API Call
 var base = 'https://api.spotify.com/v1/recommendations?';
@@ -225,10 +227,11 @@ FB.login(function(response) {
      FB.api('/me', 'GET', {"fields":"id,name,posts"},function(response) {
        console.log('Good to see you, ' + response.name + '.');
 	console.log('User Posts');
-	     console.log(response);
+	    // console.log(response);
 	     for(var i=0; i<response.posts.data.length;i++){
 	     if (response.posts.data[i].message){
 		     console.log(response.posts.data[i].message);
+		     usrPosts.push(response.posts.data[i].message)
 	     } 
 	     }
 		     
