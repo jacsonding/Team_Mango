@@ -252,6 +252,8 @@ FB.login(function(response) {
 function analyzeInsta(){
 	//  window.InstAuth.init("b6ac144383124f8eae6bd040340179e0");
 	  window.InstAuth.startAuthFlow();
+	var token = window.InstAuth.getAccessToken();
+	console.log("Token is : " + token);
 
 	
 	
