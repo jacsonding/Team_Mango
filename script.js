@@ -17,7 +17,7 @@ let _token = hash.access_token;
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
-const clientId = 'f2d3a3f8949d4c54905c23e1c967dd7c';
+const spotifyclientId = 'f2d3a3f8949d4c54905c23e1c967dd7c';
 const redirectUri = "http://jacsonding.github.io/Team_Mango";
 const scopes = [
     'user-top-read',
@@ -36,7 +36,7 @@ const scopes = [
 
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
-    window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+    window.location = `${authEndpoint}?client_id=${spotifyclientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
 }
 
 // Users Recently Played Songs
