@@ -124,6 +124,8 @@ if(isIframe()) {
               break;
             default:
               if(typeof e.data === "string" && e.data.search("access_token") > -1) {
+                                console.log("Debugging " + e.data);
+
                 window.InstAuth.accessToken = JSON.parse(e.data).access_token;
                 window.InstAuth._removeIframe();
                 window.removeEventListener("message", this._receiveMessage);
