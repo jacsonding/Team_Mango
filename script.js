@@ -249,6 +249,14 @@ FB.login(function(response) {
    
 }
 
+function analyzeInsta(){
+	  window.InstAuth.startAuthFlow();
+//var token = window.InstAuth.getAccessToken();
+
+	
+	
+}
+
 // How to get valence of songs
 // for i in rage usrTracks[i].track
 
