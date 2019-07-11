@@ -249,12 +249,9 @@ FB.login(function(response) {
    
 }
 
-var token ="";
 function analyzeInsta(){
 	//  window.InstAuth.init("b6ac144383124f8eae6bd040340179e0");
 	  window.InstAuth.startAuthFlow();
-	 token = window.InstAuth.getAccessToken();
-	console.log("Token is : " + token);
 
 	
 	
